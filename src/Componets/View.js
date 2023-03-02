@@ -17,18 +17,24 @@ const View = () => {
     setUser(res.data);
   };
   return (
-    <div className="container vh-100 py-4">
-      <Link className="btn btn-primary" to="/">
-        back to Home
-      </Link>
-      <h1 className="display-4">Student Id: {id}</h1>
-      <hr />
-      <ul className="list-group w-50">
-        <li className="list-group-item"> Student Name: {user.name}</li>
-        <li className="list-group-item">Student_email: {user.email}</li>
-        <li className="list-group-item">Password: {user.password}</li>
-      </ul>
-    </div>
+    <>
+      <div className="container vh-100 mt-5">
+        <div className="w-75 mx-auto shadow p-5">
+          <h2 className="text-center mb-4"> Student Detail</h2>
+
+          <div className="form-group mb-2">
+            {user.name && <p className="border h-50"> {user.name}</p>}
+          </div>
+          <div className="form-group mb-2">
+            {user.email && <p className="border h-50"> {user.email}</p>}
+          </div>
+
+          <div className="form-group mb-2">
+            {user.password && <p className="border h-50"> {user.password}</p>}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

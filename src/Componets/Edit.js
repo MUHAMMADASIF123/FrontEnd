@@ -31,40 +31,48 @@ const EditUser = () => {
     setUser(result.data);
   };
   return (
-    <div className="container vh-100">
+    <div className="container vh-100 mt-5">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit A Student</h2>
-        <form onSubmit={(e) => onSubmit(e)}>
-          <div className="form-group">
-            <input
-              type="num"
-              className="form-control form-control-lg"
-              placeholder="Enter Condidate number"
-              name="name"
-              value={name}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control form-control-lg"
-              placeholder="Enter Your name"
-              name="email"
-              value={email}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Date"
-              name="password"
-              value={password}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
+        <form onSubmit={onSubmit}>
+          {user.name && (
+            <div className="form-group mb-2">
+              <input
+                type="num"
+                className="form-control form-control-lg"
+                placeholder="Enter Condidate number"
+                name="name"
+                value={name}
+                onChange={onInputChange}
+              />
+            </div>
+          )}
+
+          {user.email && (
+            <div className="form-group mb-2">
+              <input
+                type="email"
+                className="form-control form-control-lg"
+                placeholder="Enter Your name"
+                name="email"
+                value={email}
+                onChange={onInputChange}
+              />
+            </div>
+          )}
+          {user.password && (
+            <div className="form-group mb-2">
+              <input
+                type="password"
+                className="form-control form-control-lg"
+                placeholder="Enter Your Date"
+                name="password"
+                value={password}
+                onChange={onInputChange}
+              />
+            </div>
+          )}
+
           <div className="d-flex justify-content-end mt-4">
             <button className="btn btn-warning btn-block">
               Update Student
